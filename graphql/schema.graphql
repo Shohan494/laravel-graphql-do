@@ -26,4 +26,14 @@ type Mutation {
   updateUser(id: ID, email: String, password: String): User
   deleteUser(id: ID): User
   }
+
+type Subscription {
+  newUser: User
 }
+
+
+# scalar ZipCode
+#
+# type User {
+#   zipCode: ZipCode
+# }
