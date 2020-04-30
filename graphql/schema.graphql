@@ -12,15 +12,18 @@ type Query {
     user(id: ID @eq): User @find
 }
 
-type Mutation {
-  createUser(email: String!, name: String!): User @create
-
-}
-
-
 type User {
     id: ID!
     email: String!
     name: String!
+    created_at: String!
+    updated_at: String
+}
 
+type Mutation {
+  createUser(email: String!, name: String!): User @create
+  //createUser(name: String!, email: String!, password: String!): User
+  updateUser(id: ID, email: String, password: String): User
+  deleteUser(id: ID): User
+  }
 }
