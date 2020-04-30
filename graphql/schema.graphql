@@ -22,7 +22,6 @@ type User {
 
 type Mutation {
   createUser(email: String!, name: String!): User @create
-  //createUser(name: String!, email: String!, password: String!): User
   updateUser(id: ID, email: String, password: String): User
   deleteUser(id: ID): User
   }
@@ -31,9 +30,13 @@ type Subscription {
   newUser: User
 }
 
+type Project {
+  id: ID!
+  name: String
+  description: String!
+  link: String!
+}
 
-# scalar ZipCode
-#
-# type User {
-#   zipCode: ZipCode
-# }
+type Query {
+  projects: [Project!]! @all
+}
