@@ -13,11 +13,6 @@ return [
     |
     */
 
-       'paths' => ['api/*'],
-       'paths' => ['api/*', 'graphql'],
-       'allowed_methods' => ['*'],
-       'allowed_origins' => explode(',', env('ALLOWED_CORS_ORIGINS', [])),
-
     'route' => [
         /*
          * The URI the endpoint responds to, e.g. mydomain.com/graphql.
