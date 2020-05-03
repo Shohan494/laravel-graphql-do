@@ -12,23 +12,21 @@ type Query {
     user(id: ID @eq): User @find
 }
 
+input CreateUserInput {
+  name: String!
+  email: String
+}
+
 type User {
-    id: ID!
-    email: String!
-    name: String!
-    created_at: String!
-    updated_at: String
+  id: ID!
+  name: String!
+  email: String
 }
 
 type Mutation {
-  createUser(email: String!, name: String!): User @create
-  updateUser(id: ID, email: String, password: String): User
-  deleteUser(id: ID): User
-  }
-
-type Subscription {
-  newUser: User
+  createUser(input: CreateUserInput! @spread): User @create
 }
+
 
 type Project {
   id: ID!
